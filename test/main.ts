@@ -1,5 +1,10 @@
-import { helloWorld } from "../src/lib";
-import parseTestData from "./testdata";
+import * as Mocha from "mocha";
 
-const td = parseTestData();
-console.log(td[10]);
+import {} from "./tests";
+
+const mocha = new Mocha({ bail: true });
+mocha.addFile("./test/tests.ts");
+
+mocha.run(failures => {
+  process.exitCode = failures ? 1 : 0;
+});
