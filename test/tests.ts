@@ -27,7 +27,13 @@ describe("The unicode test cases", () => {
     it(testCase.description, () => {
       const expected = expectedGraphemes(testCase);
       const actual = Array.from(graphemes(testCase.string));
-      assert.deepStrictEqual(actual, expected);
+      assert.deepStrictEqual(
+        actual,
+        expected,
+        `'${actual}' !== ${expected}\n${JSON.stringify(
+          Array.from(actual)
+        )} !== ${JSON.stringify(Array.from(expected))}`
+      );
     });
   }
 });

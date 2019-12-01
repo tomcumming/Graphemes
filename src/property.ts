@@ -57,7 +57,7 @@ export function lookupProperty(codePoint: string): Property {
   let low = 0;
   let high = data.length;
 
-  while (low < high) {
+  while (low <= high) {
     const range = high - low;
     const mid = low + Math.floor(range / 2);
 

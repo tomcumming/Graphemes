@@ -1,5 +1,7 @@
 import { Property } from "../property";
 
+import gb3 from "./gb3";
+import gb4 from "./gb4";
 import gb9 from "./gb9";
 
 export enum StepResult {
@@ -13,5 +15,5 @@ export interface Rule {
 }
 
 export function allRules(): Rule[] {
-  return [gb9()];
+  return [gb3(), gb4(), gb9()];
 }
