@@ -19,7 +19,7 @@ const sourceFile = `export default [
 ${rows
   .map(r => `  [0x${r[0].toLowerCase()}, 0x${r[1].toLowerCase()}, "${r[2]}"],`)
   .join("\n")}
-];
+] as [number, number, string][];
 `;
 
 fs.writeFileSync("src/propertydata.ts", sourceFile);
