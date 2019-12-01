@@ -4,7 +4,7 @@ export enum Property {
   CR,
   LF,
   Control,
-  Extends,
+  Extend,
   ZWJ,
   RegionalIndicator,
   Prepend,
@@ -25,8 +25,8 @@ function parseProperty(name: string): Property {
       return Property.LF;
     case "Control":
       return Property.Control;
-    case "Extends":
-      return Property.Extends;
+    case "Extend":
+      return Property.Extend;
     case "ZWJ":
       return Property.ZWJ;
     case "Regional_Indicator":
@@ -50,15 +50,16 @@ function parseProperty(name: string): Property {
   throw new Error(`Unknown property: '${name}'`);
 }
 
-export default function getProperty(codePoint: string): Property {
+export function lookupProperty(codePoint: string): Property {
   const cp = codePoint.codePointAt(0);
+  if (cp === undefined) throw new Error(`Can't read codepoint '${codePoint}'`);
 
   let low = 0;
   let high = data.length;
 
   while (low < high) {
     const range = high - low;
-    const mid = Math.floor(range / 2);
+    const mid = low + Math.floor(range / 2);
 
     const midRow = data[mid];
     if (midRow[0] > cp) high = mid - 1;
