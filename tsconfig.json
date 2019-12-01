@@ -3,7 +3,8 @@
     "strict": true,
     "target": "esnext",
     "module": "esnext",
-    "outDir": "dist"
+    "outDir": "dist",
+    "moduleResolution": "node"
   },
   "files": ["src/lib.ts"]
 }

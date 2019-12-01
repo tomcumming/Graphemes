@@ -2,3 +2,4 @@
 /dist
 /data
 /package-lock.json
+/src/propertydata.ts

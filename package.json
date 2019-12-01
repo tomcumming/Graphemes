@@ -1,9 +1,10 @@
 {
   "scripts": {
     "build": "tsc",
-    "fetchtestdata": "mkdir -p data && curl -K https://www.unicode.org/Public/12.0.0/ucd/auxiliary/GraphemeBreakTest.txt -o data/GraphemeBreakTest.txt",
+    "fetchdata": "mkdir -p data && curl https://www.unicode.org/Public/12.0.0/ucd/auxiliary/GraphemeBreakTest.txt > data/GraphemeBreakTest.txt && curl https://www.unicode.org/Public/12.0.0/ucd/auxiliary/GraphemeBreakProperty.txt > data/GraphemeBreakProperty.txt",
+    "makedata": "node scripts/propertydata.js",
     "test": "ts-node -P test/tsconfig.json test/main.ts",
-    "format": "prettier --write \"{src,test}/**/*\" package.json tsconfig.json"
+    "format": "prettier --write \"{src,test,scripts}/**/*\" package.json tsconfig.json"
   },
   "devDependencies": {
     "@types/assert": "^1.4.3",
