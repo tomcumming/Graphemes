@@ -13,7 +13,7 @@ export function* fromCodePoints(
 
     for (const rule of rules) {
       const next = lookupProperty(cp);
-      const ruleResult = rule.step(next);
+      const ruleResult = rule.step(next, cp);
       if (result === StepResult.Continue) result = ruleResult;
     }
 
@@ -30,6 +30,10 @@ export function* fromCodePoints(
   if (current !== undefined) yield current;
 }
 
-export default function fromString(input: string): IterableIterator<string> {
+export function fromString(input: string): IterableIterator<string> {
   return fromCodePoints(Array.from(input));
+}
+
+export default function fromStringAsArray(input: string): string[] {
+  return Array.from(fromString(input));
 }

@@ -21,14 +21,36 @@ describe("Property lookup", () => {
 
 describe("RI breaks (GB12 & 13)", () => {
   it("Does not break between two RIs", () => {
+    const cp = String.fromCodePoint(0x1f1e6);
     const rule = gb12_13();
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.Continue);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.DontBreak);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.Continue);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.DontBreak);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.Continue);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.DontBreak);
-    assert.equal(rule.step(Property.RegionalIndicator), StepResult.Continue);
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.Continue
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.DontBreak
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.Continue
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.DontBreak
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.Continue
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.DontBreak
+    );
+    assert.equal(
+      rule.step(Property.RegionalIndicator, cp),
+      StepResult.Continue
+    );
   });
 });
 

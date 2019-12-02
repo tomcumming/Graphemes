@@ -26,7 +26,7 @@ describe("The unicode test cases", () => {
   for (const testCase of testCases) {
     it(testCase.description, () => {
       const expected = expectedGraphemes(testCase);
-      const actual = Array.from(graphemes(testCase.string));
+      const actual = graphemes(testCase.string);
 
       const expectedNums = expected.map(s =>
         Array.from(s).map(s => (s.codePointAt(0) as number).toString(16))
