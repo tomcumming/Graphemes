@@ -27,12 +27,20 @@ describe("The unicode test cases", () => {
     it(testCase.description, () => {
       const expected = expectedGraphemes(testCase);
       const actual = Array.from(graphemes(testCase.string));
+
+      const expectedNums = expected.map(s =>
+        Array.from(s).map(s => (s.codePointAt(0) as number).toString(16))
+      );
+      const actualNums = actual.map(s =>
+        Array.from(s).map(s => (s.codePointAt(0) as number).toString(16))
+      );
+
       assert.deepStrictEqual(
         actual,
         expected,
         `'${actual}' !== ${expected}\n${JSON.stringify(
-          Array.from(actual)
-        )} !== ${JSON.stringify(Array.from(expected))}`
+          actualNums
+        )} !== ${JSON.stringify(expectedNums)}`
       );
     });
   }

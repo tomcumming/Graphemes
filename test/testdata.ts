@@ -14,14 +14,12 @@ export type TestEntry = {
 const testDataPath = "data/GraphemeBreakTest.txt";
 
 function parseHex(line: string): { rest: string; number: number } {
-  let numStr = "";
-  while (!/^\s/.test(line)) {
-    numStr = numStr + line[0];
-    line = line.substr(1);
-  }
+  const match = line.match(/^(\w+)\s+/u);
+  if (match === null) throw new Error(`Expected hex: '${line}'`);
+
   return {
-    rest: line.trimLeft(),
-    number: parseInt(`0x${numStr}`)
+    rest: line.substr(match[0].length),
+    number: parseInt(`0x${match[1]}`)
   };
 }
 
@@ -35,7 +33,7 @@ function parseCodePoint(
     return "end";
   } else {
     const result = parseHex(line);
-    const char = String.fromCharCode(result.number);
+    const char = String.fromCodePoint(result.number);
 
     return {
       rest: result.rest,
@@ -47,7 +45,7 @@ function parseCodePoint(
   }
 }
 
-function parseEntry(line: string): TestEntry {
+export function parseEntry(line: string): TestEntry {
   let codePoints: CodePoint[] = [];
   while (true) {
     const result = parseCodePoint(line);
@@ -59,7 +57,7 @@ function parseEntry(line: string): TestEntry {
   return {
     codePoints,
     string: codePoints.map(cp => cp.char).join(""),
-    description: line.split("#")[1]
+    description: line.split("#")[1].trimLeft()
   };
 }
 

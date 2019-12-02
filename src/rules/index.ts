@@ -3,6 +3,7 @@ import { Property } from "../property";
 import gb3 from "./gb3";
 import gb4 from "./gb4";
 import gb9 from "./gb9";
+import gb12_13 from "./gb12-13";
 
 export enum StepResult {
   Break,
@@ -15,5 +16,5 @@ export interface Rule {
 }
 
 export function allRules(): Rule[] {
-  return [gb3(), gb4(), gb9()];
+  return [gb3(), gb4(), gb9(), gb12_13()];
 }
