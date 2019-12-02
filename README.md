@@ -6,7 +6,7 @@
 
 - Easy `String -> String[]` usage
 - Also handles streaming for huge text
-    - Code points in
+    - Iterator of code points in
     - Iterator of graphemes out
 - Passes the Unicode 12 grapheme test suite
 - Straightforward, Modern Typescript implementation
