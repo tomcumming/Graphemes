@@ -1,4 +1,4 @@
-# Grapheme Clusters
+# Graphemes
 
 ## A JavaScript library to convert a string into an array of graphemes, following the Unicode 12 Text Segmentation spec
 
