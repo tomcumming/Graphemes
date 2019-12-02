@@ -14,5 +14,30 @@
     "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.2"
-  }
+  },
+  "name": "graphemes",
+  "description": "A JavaScript library to convert a string into an array of graphemes, following the Unicode 12 Text Segmentation spec",
+  "version": "1.0.1",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://tomcumming@github.com/tomcumming/Graphemes.git"
+  },
+  "keywords": [
+    "Unicode",
+    "Graphemes"
+  ],
+  "author": "Tom Cumming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomcumming/Graphemes/issues"
+  },
+  "homepage": "https://github.com/tomcumming/Graphemes#readme",
+  "files": [
+    "lib/**/*"
+  ]
 }
