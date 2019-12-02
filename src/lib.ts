@@ -1,6 +1,11 @@
 import { Rule, StepResult, allRules } from "./rules";
-import { lookupProperty, Property } from "./property";
+import { lookupProperty } from "./property";
 
+/** Converts a stream of code points into a stream of graphemes
+ *
+ * @param codePoints The input stream of code points
+ * @returns A stream of graphemes
+ */
 export function* fromCodePoints(
   codePoints: Iterable<string>
 ): IterableIterator<string> {
@@ -30,10 +35,18 @@ export function* fromCodePoints(
   if (current !== undefined) yield current;
 }
 
+/** Converts a string into a stream of graphemes
+ *
+ * @param input
+ */
 export function fromString(input: string): IterableIterator<string> {
   return fromCodePoints(Array.from(input));
 }
 
+/** Converts a string into an array of graphemes
+ *
+ * @param input
+ */
 export default function fromStringAsArray(input: string): string[] {
   return Array.from(fromString(input));
 }
