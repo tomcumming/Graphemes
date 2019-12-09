@@ -1,0 +1,1 @@
+This is an example of usage for browsers that do not yet support [Unicode property escapes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes).
