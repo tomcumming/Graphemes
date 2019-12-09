@@ -18,6 +18,8 @@
 npm i graphemes
 ```
 
+- This code uses [Unicode property escapes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) so be sure to include `@babel/plugin-proposal-unicode-property-regex` if you plan to target Firefox and Edge. [Example here](example)
+
 ## Example
 
 ```javascript
