@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "format": "prettier --write \"{src,dist}/**/*\" package.json webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-unicode-property-regex": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "prettier": "^1.19.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "graphemes": "^1.0.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 1 Safari versions"
+  ]
+}
