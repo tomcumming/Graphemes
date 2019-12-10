@@ -5,5 +5,5 @@
     "module": "commonjs",
     "moduleResolution": "node"
   },
-  "files": ["main.ts"]
+  "include": ["**/*"]
 }

@@ -47,6 +47,8 @@ export function fromString(input: string): IterableIterator<string> {
  *
  * @param input
  */
-export default function fromStringAsArray(input: string): string[] {
+export function fromStringAsArray(input: string): string[] {
   return Array.from(fromString(input));
 }
+
+export default fromStringAsArray;

@@ -1,7 +1,7 @@
 import * as mocha from "mocha";
 import * as assert from "assert";
 
-import graphemes from "../src/lib";
+import graphemes from "../src";
 import parseTestData from "./testdata";
 import { TestEntry } from "./testdata";
 
