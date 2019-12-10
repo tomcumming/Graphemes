@@ -13,8 +13,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-unicode-property-regex"]
+            presets: ["@babel/preset-env"]
           }
         }
       }
