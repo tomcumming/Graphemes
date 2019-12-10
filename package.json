@@ -17,7 +17,7 @@
   },
   "name": "graphemes",
   "description": "A JavaScript library to convert a string into an array of graphemes, following the Unicode 12 Text Segmentation spec",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
